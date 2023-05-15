@@ -1,0 +1,14 @@
+# A compléter : il y a 10 descripteurs
+# A compléter : il y a 779 objets
+# A compléter : Le pokemon ayant l'id 150 est Mewtwo
+# A compléter : De quels types est le dernier pokémon du fichier ?	Fire;Water
+
+import pandas
+
+donnees = pandas.read_csv("pokemon.csv") #lis le fichier
+trie= donnees.sort_values("Name") #trie les noms par ordre alphabétique, le dernier est: Zygarde
+vitesse= donnees.sort_values("Speed") #trie dans l'ordre croissant, les moins rapide sont Shuckle et Munchlax
+moyenne= donnees.loc[:,"Attack"].mean()#moyenne des attack= 77.54172015404365
+type_dragon= donnees.loc[donnees["Type"]=="Dragon"]#il y a 11 type dragon
+jsp= donnees.loc[(donnees["Generation"]==2) & (donnees["Speed"]==110)]# Lugia, Espeon,Jumpluff
+print(jsp)
